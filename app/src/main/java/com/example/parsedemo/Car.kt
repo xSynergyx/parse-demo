@@ -17,32 +17,32 @@ class Car : ParseObject() {
         return getString(KEY_MAKE)
     }
 
-    fun setMake(description: String) {
-        put(KEY_MAKE, description)
+    fun setMake(make: String) {
+        put(KEY_MAKE, make)
     }
 
     fun getModel(): String? {
         return getString(KEY_MODEL)
     }
 
-    fun setModel(parsefile: String) {
-        put(KEY_MODEL, parsefile)
+    fun setModel(model: String) {
+        put(KEY_MODEL, model)
     }
 
     fun getImage(): ParseFile? {
         return getParseFile(KEY_IMAGE)
     }
 
-    fun setImage(parsefile: ParseFile) {
-        put(KEY_IMAGE, parsefile)
+    fun setImage(parseFile: ParseFile) {
+        put(KEY_IMAGE, parseFile)
     }
 
     fun getHorsepower(): String? {
         return getString(KEY_HORSEPOWER)
     }
 
-    fun setHorsepower(user: String) {
-        put(KEY_USER, user)
+    fun setHorsepower(horsepower: String) {
+        put(KEY_HORSEPOWER, horsepower)
     }
 
     fun getUser(): ParseUser? {
@@ -57,7 +57,7 @@ class Car : ParseObject() {
         const val KEY_IMAGE = "image"
         const val KEY_MAKE = "make"
         const val KEY_MODEL = "model"
-        const val KEY_HORSEPOWER = "user"
+        const val KEY_HORSEPOWER = "horsepower"
         const val KEY_USER = "user"
     }
 }

@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.parse.FindCallback
 import com.parse.ParseException
 import com.parse.ParseQuery
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val logoutButton = findViewById<Button>(R.id.logout_button)
+        val addCarFab = findViewById<FloatingActionButton>(R.id.add_car_fab)
 
         // RecyclerView setup
         carsRv = findViewById(R.id.car_recyclerview)
@@ -37,6 +39,10 @@ class MainActivity : AppCompatActivity() {
             ParseUser.logOut()
             goToLoginActivity()
         }
+
+        addCarFab.setOnClickListener {
+            goToNewCarActivity()
+        }
     }
 
     // Navigate to Login activity
@@ -44,6 +50,11 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this@MainActivity, LoginActivity::class.java)
         startActivity(intent)
         finish() // So that we can't come back to the log in page by hitting back
+    }
+
+    private fun goToNewCarActivity() {
+        val intent = Intent(this@MainActivity, NewCarActivity::class.java)
+        startActivity(intent)
     }
 
     private fun queryCars() {

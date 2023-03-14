@@ -41,7 +41,8 @@ class CarAdapter(private val context: Context, private val cars: List<Car>) :
         fun bind(car: Car) {
             makeTextView.text = car.getMake()
             modelTextView.text = car.getModel()
-            horsepowerTextView.text = car.getModel()
+            val horsepowerText = "HP: ${car.getHorsepower()}"
+            horsepowerTextView.text = horsepowerText
 
             // Load the car image
             Glide.with(context)
